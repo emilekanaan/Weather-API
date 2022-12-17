@@ -4,7 +4,7 @@ import clear from "../img/weather-icons/clear.svg";
 import "./Search.css";
 class Search extends React.Component {
   state = {
-    input: ""
+    input: "Mr. Emile"
   };
 
   render() {
