@@ -3,65 +3,61 @@ import React, { Component } from "react";
 
 
 class HourlyWeather extends Component {
-    constructor(props){
-        super(props);
-        this.state = {
-
-        };
-    }
+    
 
     render() {
+        
         return (
             <>
             <section className="hourlyWeather">
           <section>
-            <time>03:00</time>
+            <time>{this.props.hourlyArray[0]}</time>
             <figure>
               <img src="https://placekitten.com/75/75" alt="cat"></img>
             </figure>
-            <span className="hTempValue">8&#8451;</span>
+            <span className="hTempValue">{this.props.tempArray[0]}&#8451;</span>
           </section>
           <section>
-            <time>06:00</time>
+            <time>{this.props.hourlyArray[1]}</time>
             <figure>
               <img src="https://placekitten.com/75/75" alt="cat"></img>
             </figure>
-            <span className="hTempValue">9&#8451;</span>
+            <span className="hTempValue">{this.props.tempArray[1]}&#8451;</span>
           </section>
           <section>
-            <time>09:00</time>
+            <time>{this.props.hourlyArray[2]}</time>
             <figure>
               <img src="https://placekitten.com/75/75" alt="cat"></img>
             </figure>
-            <span className="hTempValue">14&#8451;</span>
+            <span className="hTempValue">{this.props.tempArray[2]}&#8451;</span>
           </section>
           <section>
-            <time>12:00</time>
+            <time>{this.props.hourlyArray[3]}</time>
             <figure>
               <img src="https://placekitten.com/75/75" alt="cat"></img>
             </figure>
-            <span className="hTempValue">17&#8451;</span>
+            <span className="hTempValue">{this.props.tempArray[3]}&#8451;</span>
           </section>
           <section>
-            <time>15:00</time>
+            <time>{this.props.hourlyArray[4]}</time>
             <figure>
               <img src="https://placekitten.com/75/75" alt="cat"></img>
             </figure>
-            <span className="hTempValue">18&#8451;</span>
+            <span className="hTempValue">{this.props.tempArray[4]}&#8451;</span>
           </section>
           <section>
-            <time>18:00</time>
+            <time>{this.props.hourlyArray[5]}</time>
             <figure>
               <img src="https://placekitten.com/75/75" alt="cat"></img>
             </figure>
-            <span className="hTempValue">16&#8451;</span>
+            <span className="hTempValue">{this.props.tempArray[5]}&#8451;</span>
           </section>
           <section>
-            <time>21:00</time>
+            <time>{this.props.hourlyArray[6]}</time>
             <figure>
               <img src="https://placekitten.com/75/75" alt="cat"></img>
             </figure>
-            <span className="hTempValue">13&#8451;</span>
+            <span className="hTempValue">{this.props.tempArray[6]}&#8451;</span>
           </section>
         </section>
             </>

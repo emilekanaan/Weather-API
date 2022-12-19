@@ -8,7 +8,6 @@
 header {
   background-color: #759EDA;
   padding: 1pc;
-  height: 4pc;
   display: flex;
   align-items: center;
 }
@@ -58,8 +57,7 @@ figcaption {
 .weatherDetails > p {
   text-align: center;
   font-size: 1.3pc;
-  margin-top: 1pc;
-  
+  margin-top: 1pc;  
 }
 
 .moreDetails {
@@ -70,11 +68,11 @@ figcaption {
 .moreDetails > p {
   margin: 0.9pc;
   font-size: 0.8pc;
-  font-weight: bolder;
+  
 }
 
 .label {
-  font-weight: 900;
+  font-weight: bold;
 }
 
 .hourlyWeather{ 
@@ -131,7 +129,23 @@ figcaption {
   }
 
   .hourlyWeather > section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    border-bottom: 1px solid rgba(0, 0, 100, 0.5);
     margin: 1.5pc;
+    margin-bottom: 0;
+    
+  }
+
+  .hourlyWeather > section:not(:nth-child(1)) {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  .hourlyWeather > section:last-child {
+    border: none;
   }
   
   .hourlyWeather figure {
