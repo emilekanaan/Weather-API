@@ -3,7 +3,19 @@ import Search from "./components/Search";
 
 import CurrentWeather from "./components/CurrentWeather";
 import HourlyWeather from "./components/HourlyWeather";
-import FakeWeather from "./data/FakeWeather.json";
+
+
+import clear from "./img/weather-icons/clear.svg";
+import cloudy from "./img/weather-icons/cloudy.svg";
+import drizzle from "./img/weather-icons/drizzle.svg";
+import fog from "./img/weather-icons/fog.svg";
+import mostlycloudy from "./img/weather-icons/mostlycloudy.svg";
+import partlycloudy from "./img/weather-icons/partlycloudy.svg";
+import rain from "./img/weather-icons/rain.svg";
+import snow from "./img/weather-icons/snow.svg";
+import storm from "./img/weather-icons/storm.svg";
+import unknown from "./img/weather-icons/unknown.svg";
+
 
 
 import "./App.css";
@@ -99,13 +111,42 @@ class App extends Component {
       return temp
     }
 
-    // function iconsArray(Weather) {
-    //   let icon = [];
-    //   for (let i = 5; i<= 11; i++) {
-    //     icon.push((Weather.list[i].weather))
-    //   }
-    //   return icon
-    // }
+    function iconsArray(Weather) {
+      let icon = [];
+      for (let i = 1; i<= 7; i++) {
+        icon.push((Weather.list[i].weather[0].id))
+      }
+      return icon
+    }
+    
+
+    function mainIconChoosing(Weather) {
+      
+
+      if(Weather < 300) {
+        return storm;
+      } else if (Weather >=300 && Weather < 499) {
+        return drizzle;
+      } else if (Weather >=500 && Weather < 599) {
+        return rain;
+      } else if (Weather >=600 && Weather < 699) {
+        return snow;
+      } else if (Weather >=700 && Weather < 799) {
+        return fog;
+      } else if (Weather ==800) {
+        return clear;
+      } else if (Weather ==801) {
+        return partlycloudy;
+      } else if (Weather >801 && Weather <= 805) {
+        return mostlycloudy;
+      }else {
+        return undefined
+      }
+
+    }
+
+
+    
   
   
 
@@ -113,7 +154,7 @@ class App extends Component {
     // console.log(Weather[0])
 
   // console.log(this.state.Weather[0].dt)
-    const { error, isLoaded, Weather } = this.state;
+    const { error, isLoaded } = this.state;
     if (error) {
       return <div>Error: {error.message}</div>;
     } else if (!isLoaded) {
@@ -128,19 +169,21 @@ class App extends Component {
             click={this.handleClick}
             city={this.state.city}
           />
-          {console.log(this.state)}
+          {console.log(this.state.Weather.list[0].weather[0].id)}
+          {console.log(iconsArray(this.state.Weather))}
           <CurrentWeather 
             currentWeatherDesc={this.state.Weather.list[0].weather[0].description} 
             tempMin={(this.state.Weather.list[0].main.temp_min).toFixed()}
             tempMax={(this.state.Weather.list[0].main.temp_max).toFixed()}
             humidity={this.state.Weather.list[0].main.humidity}
             pressure={this.state.Weather.list[0].main.pressure}
+            mainIcon={mainIconChoosing(this.state.Weather.list[0].weather[0].id)}
           />
          <HourlyWeather 
             hourlyArray={hoursArray(this.state.Weather)}
             tempArray={tempArray(this.state.Weather)}
             
-            // hourlyIcons={iconsArray(this.state.Weather)}
+            iconsArray={iconsArray(this.state.Weather)}
       /> 
     
         </div>
