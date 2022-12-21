@@ -1,12 +1,12 @@
 .app {
   height: 100vh;
-  margin:auto;
-  font-family: 'Raleway', sans-serif;
-  background-color: #9CCEF4;
+  margin: auto;
+  font-family: "Raleway", sans-serif;
+  background-color: #9ccef4;
 }
 
 header {
-  background-color: #759EDA;
+  background-color: #759eda;
   padding: 1pc;
   display: flex;
   align-items: center;
@@ -15,7 +15,7 @@ header {
 input {
   border: none;
   font-size: 1.3pc;
-  background-color: #759EDA;
+  background-color: #759eda;
   color: white;
   padding-bottom: 0.7pc;
   width: 15pc;
@@ -24,17 +24,23 @@ input {
 input:focus {
   outline: none;
   padding-bottom: 0.7pc;
-  border-bottom: 1px solid rgba(0,0,200,0.7);
+  border-bottom: 1px solid rgba(0, 0, 200, 0.7);
 }
 
 button {
   padding: 1pc;
   margin-left: 1.5pc;
-  background-color: #5879C7;
+  background-color: #5879c7;
   border: none;
   border-radius: 2px;
   font-size: 1.1pc;
   font-weight: 300;
+}
+
+.errorMessage {
+  text-align: center;
+  color: red;
+  font-weight: bold;
 }
 
 main > figure {
@@ -57,7 +63,7 @@ figcaption {
 .weatherDetails > p {
   text-align: center;
   font-size: 1.3pc;
-  margin-top: 1pc;  
+  margin-top: 1pc;
 }
 
 .moreDetails {
@@ -68,33 +74,31 @@ figcaption {
 .moreDetails > p {
   margin: 0.9pc;
   font-size: 0.8pc;
-  
 }
 
 .label {
   font-weight: bold;
 }
 
-.hourlyWeather{ 
+.hourlyWeather {
   display: flex;
   flex-wrap: wrap;
-  background-color: #9CCEF4;
+  background-color: #9ccef4;
   text-align: center;
   justify-content: center;
   margin: 1pc;
   margin-top: 2pc;
 }
 
-  .hourlyWeather > section {
-    margin-top: 1pc;
-  }
+.hourlyWeather > section {
+  margin-top: 1pc;
+}
 
 .hourlyWeather figure {
   margin: 2pc 1.5pc;
 }
 
 @media screen and (max-width: 900px) {
-
   .hourlyWeather > section {
     margin-top: 2pc;
   }
@@ -107,7 +111,6 @@ figcaption {
 @media screen and (max-width: 500px) {
   header {
     height: 8pc;
-    
   }
 
   form {
@@ -136,7 +139,6 @@ figcaption {
     border-bottom: 1px solid rgba(0, 0, 100, 0.5);
     margin: 1.5pc;
     margin-bottom: 0;
-    
   }
 
   .hourlyWeather > section:not(:nth-child(1)) {
@@ -147,9 +149,8 @@ figcaption {
   .hourlyWeather > section:last-child {
     border: none;
   }
-  
+
   .hourlyWeather figure {
     margin: 1pc;
   }
-
 }

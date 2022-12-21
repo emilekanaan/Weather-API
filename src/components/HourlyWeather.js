@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import clear from "../img/weather-icons/clear.svg";
-import cloudy from "../img/weather-icons/cloudy.svg";
 import drizzle from "../img/weather-icons/drizzle.svg";
 import fog from "../img/weather-icons/fog.svg";
 import mostlycloudy from "../img/weather-icons/mostlycloudy.svg";
@@ -8,44 +7,38 @@ import partlycloudy from "../img/weather-icons/partlycloudy.svg";
 import rain from "../img/weather-icons/rain.svg";
 import snow from "../img/weather-icons/snow.svg";
 import storm from "../img/weather-icons/storm.svg";
-import unknown from "../img/weather-icons/unknown.svg";
-
-
 
 class HourlyWeather extends Component {
-    
 
-    render() {
+  render() {
 
-      function iconChoosing(num) {
-      
-
-      if(num < 300) {
+    function iconChoosing(num) {
+      if (num < 300) {
         return storm;
-      } else if (num >=300 && num < 499) {
+      } else if (num >= 300 && num < 499) {
         return drizzle;
-      } else if (num >=500 && num < 599) {
+      } else if (num >= 500 && num < 599) {
         return rain;
-      } else if (num >=600 && num < 699) {
+      } else if (num >= 600 && num < 699) {
         return snow;
-      } else if (num >=700 && num < 799) {
+      } else if (num >= 700 && num < 799) {
         return fog;
-      } else if (num ==800) {
+      } else if (num === 800) {
         return clear;
-      } else if (num ==801) {
+      } else if (num === 801) {
         return partlycloudy;
-      } else if (num >801 && num <= 805) {
+      } else if (num > 801 && num <= 805) {
         return mostlycloudy;
-      }else {
+      } else {
         return undefined
       }
 
     }
-        
-        return (
-            <>
-            {console.log(iconChoosing(this.props.iconsArray[0]))}
-            <section className="hourlyWeather">
+
+    return (
+      <>
+
+        <section className="hourlyWeather">
           <section>
             <time>{this.props.hourlyArray[0]}</time>
             <figure>
@@ -96,9 +89,9 @@ class HourlyWeather extends Component {
             <span className="hTempValue">{this.props.tempArray[6]}&#8451;</span>
           </section>
         </section>
-            </>
-        )
-    }
+      </>
+    )
+  }
 }
 
 export default HourlyWeather;
